@@ -1,0 +1,27 @@
+[package]
+name = "floresta-ffi"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+uniffi = { version = "0.26.1", features = ["build", "cli"] }
+florestad = { path = "../floresta/florestad", features = [ "experimental-p2p", "json-rpc", "compact-filters"]}
+
+[build-dependencies]
+uniffi = { version = "0.26.1", features = ["build", "cli"] }
+
+[[bin]]
+# This can be whatever name makes sense for your project, but the rest of this tutorial assumes uniffi-bindgen.
+name = "uniffi-bindgen"
+path = "src/uniffi-bindgen.rs"
+
+[lib]
+crate-type = ["cdylib"]
+name = "florestad_ffi"
+
+[dev-dependencies]
+uniffi = { version = "0.26.1", features = ["build", "cli"] }
+
+[patch."https://github.com/rust-lang/crates.io-index"]
+bitcoin = { git = "https://github.com/Davidson-Souza/rust-bitcoin", rev = "eb5d7a3896fff0ebf6394dabc882d46e439695be" }

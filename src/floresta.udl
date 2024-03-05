@@ -1,0 +1,6 @@
+namespace floresta {};
+
+interface Florestad {
+	constructor();
+	void run();
+};
