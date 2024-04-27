@@ -1,21 +1,7 @@
 uniffi::include_scaffolding!("floresta");
 
-use florestad::Florestad as ActualFlorestad;
+pub use florestad::Network;
+pub use florestad::Config;
+pub use florestad::FilterType;
+pub use florestad::Florestad;
 
-pub struct Florestad(ActualFlorestad);
-
-impl Florestad {
-    pub fn new() -> Self {
-        let config = florestad::run::Config {
-            network: florestad::cli::Network::Signet,
-            ..Default::default()
-        };
-
-        Self(config.into())
-    }
-
-    pub fn run(&self) {
-        self.0.start();
-    }
-
-}
