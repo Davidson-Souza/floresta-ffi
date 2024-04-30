@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 uniffi = { version = "0.26.1", features = ["build", "cli"] }
-florestad = { path = "../floresta/florestad", features = [ "experimental-p2p", "json-rpc", "compact-filters"]}
+florestad = { git = "https://github.com/Davidson-Souza/Floresta", rev = "41ec3bd532527a7289555eb889a7cbec9a5f6654", features = [ "experimental-p2p", "json-rpc", "compact-filters"]}
 bitcoin = "0.31"
 
 [build-dependencies]

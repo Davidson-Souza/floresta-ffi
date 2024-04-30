@@ -823,6 +823,7 @@ dependencies = [
 [[package]]
 name = "floresta-chain"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "async-std",
  "bitcoin",
@@ -839,6 +840,7 @@ dependencies = [
 [[package]]
 name = "floresta-common"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "bitcoin",
  "miniscript",
@@ -849,6 +851,7 @@ dependencies = [
 [[package]]
 name = "floresta-compact-filters"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "bitcoin",
  "floresta-chain",
@@ -860,6 +863,7 @@ dependencies = [
 [[package]]
 name = "floresta-electrum"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "async-std",
  "bitcoin",
@@ -894,6 +898,7 @@ dependencies = [
 [[package]]
 name = "floresta-watch-only"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "bitcoin",
  "floresta-common",
@@ -908,6 +913,7 @@ dependencies = [
 [[package]]
 name = "floresta-wire"
 version = "0.1.0"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "async-std",
  "bitcoin",
@@ -930,6 +936,7 @@ dependencies = [
 [[package]]
 name = "florestad"
 version = "0.5.1"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
 dependencies = [
  "anyhow",
  "async-std",
