@@ -5,20 +5,8 @@ enum Network {
     "Regtest",
 };
 
-enum FilterType {
-    "All",
-    "Inputs",
-    "TxId",
-    "SpkPKH",
-    "SpkPSH",
-    "SpkWPKH",
-    "SpkWSH",
-    "SpkTR",
-};
-
 dictionary Config {
     boolean cfilters;
-    sequence<FilterType> cfilter_types;
     boolean log_to_stdout;
     Network network = "Bitcoin";
     string? data_dir = null;
@@ -32,6 +20,7 @@ dictionary Config {
     string? connect = null;
     string? json_rpc_address = null;
     string? electrum_address = null;
+    boolean assume_utreexo = false;
 };
 
 interface Florestad {

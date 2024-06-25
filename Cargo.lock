@@ -506,6 +506,10 @@ name = "cc"
 version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8cd6604a82acf3039f1144f54b8eb34e91ffba622051189e71b781822d5ee1f5"
+dependencies = [
+ "jobserver",
+ "libc",
+]
 
 [[package]]
 name = "cfg-if"
@@ -823,7 +827,7 @@ dependencies = [
 [[package]]
 name = "floresta-chain"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "async-std",
  "bitcoin",
@@ -840,7 +844,7 @@ dependencies = [
 [[package]]
 name = "floresta-common"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "bitcoin",
  "miniscript",
@@ -851,7 +855,7 @@ dependencies = [
 [[package]]
 name = "floresta-compact-filters"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "bitcoin",
  "floresta-chain",
@@ -863,7 +867,7 @@ dependencies = [
 [[package]]
 name = "floresta-electrum"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "async-std",
  "bitcoin",
@@ -884,6 +888,7 @@ dependencies = [
  "sha2",
  "thiserror",
  "toml",
+ "zstd",
 ]
 
 [[package]]
@@ -898,7 +903,7 @@ dependencies = [
 [[package]]
 name = "floresta-watch-only"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "bitcoin",
  "floresta-common",
@@ -913,13 +918,14 @@ dependencies = [
 [[package]]
 name = "floresta-wire"
 version = "0.1.0"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "async-std",
  "bitcoin",
  "dns-lookup",
  "floresta-chain",
  "floresta-common",
+ "floresta-compact-filters",
  "futures 0.3.30",
  "kv",
  "log",
@@ -936,7 +942,7 @@ dependencies = [
 [[package]]
 name = "florestad"
 version = "0.5.1"
-source = "git+https://github.com/Davidson-Souza/Floresta?rev=41ec3bd532527a7289555eb889a7cbec9a5f6654#41ec3bd532527a7289555eb889a7cbec9a5f6654"
+source = "git+https://github.com/Davidson-Souza/Floresta?rev=4cfe92d6830ec73e7bdca75148cd82117aff6d5d#4cfe92d6830ec73e7bdca75148cd82117aff6d5d"
 dependencies = [
  "anyhow",
  "async-std",
@@ -1381,6 +1387,15 @@ name = "itoa"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c"
+
+[[package]]
+name = "jobserver"
+version = "0.1.31"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2b099aaa34a9751c5bf0878add70444e1ed2dd73f347be99003d4577277de6e"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "js-sys"
@@ -1852,6 +1867,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "pkg-config"
+version = "0.3.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec"
+
+[[package]]
 name = "plain"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2108,9 +2129,9 @@ dependencies = [
 
 [[package]]
 name = "rustreexo"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4852cab7dec3e1d89bb3ce30ca3461f7d6baee2143d0460c07bf1a718af68997"
+checksum = "c2c33c9cabda4ec10d6e44931dd108dd27907aafaba664c8a8dd3d2b04a00d73"
 dependencies = [
  "bitcoin_hashes 0.12.0",
 ]
@@ -3047,3 +3068,31 @@ name = "windows_x86_64_msvc"
 version = "0.52.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32b752e52a2da0ddfbdbcc6fceadfeede4c939ed16d13e648833a61dfb611ed8"
+
+[[package]]
+name = "zstd"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d789b1514203a1120ad2429eae43a7bd32b90976a7bb8a05f7ec02fa88cc23a"
+dependencies = [
+ "zstd-safe",
+]
+
+[[package]]
+name = "zstd-safe"
+version = "7.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1cd99b45c6bc03a018c8b8a86025678c87e55526064e38f9df301989dce7ec0a"
+dependencies = [
+ "zstd-sys",
+]
+
+[[package]]
+name = "zstd-sys"
+version = "2.0.11+zstd.1.5.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "75652c55c0b6f3e6f12eb786fe1bc960396bf05a1eb3bf1f3691c3610ac2e6d4"
+dependencies = [
+ "cc",
+ "pkg-config",
+]
