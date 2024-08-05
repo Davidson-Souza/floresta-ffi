@@ -21,6 +21,8 @@ dictionary Config {
     string? json_rpc_address = null;
     string? electrum_address = null;
     boolean assume_utreexo = false;
+    boolean debug = false;
+    i32? filters_start_height = 0;
 };
 
 interface Florestad {
