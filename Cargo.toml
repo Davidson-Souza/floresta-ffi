@@ -29,4 +29,3 @@ uniffi = { version = "0.26.1", features = ["build", "cli"] }
 # we use a fork of the bitcoin crate, which is not published on crates.io
 # because it doesn't have utreexo support (yet?)
 bitcoin = { git = "https://github.com/Davidson-Souza/rust-bitcoin", rev = "eb5d7a3896fff0ebf6394dabc882d46e439695be" }
-bitcoinconsensus = { git = "https://github.com/rust-bitcoin/rust-bitcoinconsensus" , rev = "6b71fb604ad0a9f1eab3a01d01388e1d2c169d71"}
