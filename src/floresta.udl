@@ -6,30 +6,22 @@ enum Network {
 };
 
 dictionary Config {
-    boolean cfilters;
-    boolean log_to_stdout;
-    Network network = "Bitcoin";
     string? data_dir = null;
-    sequence<string>? wallet_xpub = null;
-    sequence<string>? wallet_descriptor = null;
-    u32? rescan = null;
-    boolean log_to_file = false;
-    string? assume_valid = null;
-    string? config_file = null;
-    string? proxy = null;
-    string? connect = null;
-    string? json_rpc_address = null;
     string? electrum_address = null;
-    boolean assume_utreexo = false;
-    boolean debug = false;
-    i32? filters_start_height = 0;
+    string? rpc_address = null;
+    Network network = "Bitcoin";
+    string? wallet_xpub = null;
+    string? wallet_descriptor = null;
+    
+    i32? filters_start_height = null;
 };
 
 interface Florestad {
     constructor();
+    
     [Name=from_config]
     constructor(Config conf);
-
+    
     void start();
     void stop();
 };

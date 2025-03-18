@@ -6,8 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 uniffi = { version = "0.26.1", features = ["build", "cli"] }
-florestad = { git = "https://github.com/Davidson-Souza/Floresta", rev = "bfaf8ef9890f653fcdc74f228aae3f6afcedf40a", features = [ "experimental-p2p", "json-rpc", "compact-filters"]}
+florestad = { git = "https://github.com/vinteumorg/floresta", rev = "960778caa8ddb2461f0d2834a4ae4c39a0c895f5", features = [ "experimental-p2p", "json-rpc", "compact-filters", "experimental-db"]}
 bitcoin = "0.31"
+rustreexo = "0.4.0"
+tokio = "1.41.0"
 
 [build-dependencies]
 uniffi = { version = "0.26.1", features = ["build", "cli"] }
@@ -24,8 +26,3 @@ name = "florestad_ffi"
 [dev-dependencies]
 uniffi = { version = "0.26.1", features = ["build", "cli"] }
 
-[patch."https://github.com/rust-lang/crates.io-index"]
-
-# we use a fork of the bitcoin crate, which is not published on crates.io
-# because it doesn't have utreexo support (yet?)
-bitcoin = { git = "https://github.com/Davidson-Souza/rust-bitcoin", rev = "eb5d7a3896fff0ebf6394dabc882d46e439695be" }
